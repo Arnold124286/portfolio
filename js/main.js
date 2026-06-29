@@ -315,9 +315,9 @@ function renderInsights() {
   el.innerHTML = INSIGHTS.map(a => `
     <div class="insight-card reveal" id="insight-${a.id}" data-article-id="${a.id}">
       <div class="insight-card-img" style="${a.image ? 'padding:0;' : ''}">
-        ${a.image 
-          ? `<img src="${a.image}" alt="${a.title}" style="width:100%;height:100%;object-fit:cover;">` 
-          : a.emoji}
+        ${a.image
+      ? `<img src="${a.image}" alt="${a.title}" style="width:100%;height:100%;object-fit:cover;">`
+      : a.emoji}
       </div>
       <div class="insight-card-body">
         <div class="insight-topic">${a.topic}</div>
@@ -408,7 +408,7 @@ function openArticle(id) {
   const content = document.getElementById('article-content');
   if (!modal || !content) return;
 
-  const heroContent = article.image 
+  const heroContent = article.image
     ? `<img src="${article.image}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;">`
     : `<span class="article-hero-emoji">${article.emoji}</span>`;
 
@@ -503,19 +503,46 @@ function initScrollReveal() {
 }
 
 /* ── CONTACT FORM ── */
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
   e.preventDefault();
-  const btn = document.getElementById('btn-submit');
+  const form   = e.target;
+  const btn    = document.getElementById('btn-submit');
   const success = document.getElementById('form-success');
+
   btn.textContent = 'Sending…';
-  btn.disabled = true;
-  setTimeout(() => {
+  btn.disabled    = true;
+
+  try {
+    const data = new FormData(form);
+    // FormSubmit needs Accept: application/json to return JSON instead of redirecting
+    const res = await fetch('https://formsubmit.co/ajax/luxbrandscreatives@gmail.com', {
+      method:  'POST',
+      headers: { 'Accept': 'application/json' },
+      body:    data
+    });
+
+    const json = await res.json();
+
+    if (json.success === 'true' || json.success === true) {
+      if (success) {
+        success.textContent = '✅ Message sent! We\'ll get back to you within 24 hours.';
+        success.style.display = 'block';
+      }
+      form.reset();
+      setTimeout(() => { if (success) success.style.display = 'none'; }, 6000);
+    } else {
+      throw new Error('FormSubmit returned failure');
+    }
+  } catch (err) {
+    if (success) {
+      success.textContent = '⚠️ Oops — something went wrong. Please email us directly at luxbrandscreatives@gmail.com';
+      success.style.color  = '#c0392b';
+      success.style.display = 'block';
+    }
+  } finally {
     btn.textContent = 'Send Message →';
-    btn.disabled = false;
-    if (success) { success.style.display = 'block'; }
-    e.target.reset();
-    setTimeout(() => { if (success) success.style.display = 'none'; }, 5000);
-  }, 1200);
+    btn.disabled    = false;
+  }
 }
 
 /* ── INIT ── */
