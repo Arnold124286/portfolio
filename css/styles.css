@@ -712,7 +712,7 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .design-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
 }
 
 .design-item {
@@ -720,7 +720,8 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .design-thumb {
-  width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 0.5s ease;
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s ease;
+  display: block;
 }
 
 .design-item:hover .design-thumb { transform: scale(1.05); }

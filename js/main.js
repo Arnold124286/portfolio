@@ -261,19 +261,132 @@ const INSIGHTS = [
 
 /* ── DESIGN WORK DATA ── */
 const DESIGNS = [
-  { id: 'd1', file: 'images/poster-bruno-cup.jpg', name: 'Bruno Otieno Cup', cat: 'Political · Sports Event', filter: 'political', desc: 'Bruno Cup Suna East — 08th to 14th April 2024' },
-  { id: 'd2', file: 'images/poster-christine-ian.jpg', name: 'Christine Weds Ian', cat: 'Wedding Invitation', filter: 'wedding', desc: '23rd December 2024 · Nyanuguti SDA Church' },
-  { id: 'd3', file: 'images/poster-yesu-akwaambia.jpg', name: 'Yesu Akwaambia Concert', cat: 'Music · Event Poster', filter: 'event', desc: 'Heavenly Eagles Ministers — 28th June · Kabianga Boys High School' },
-  { id: 'd4', file: 'images/cd-kiageh-jnr.jpg', name: 'Kiageh JNR — A Reason To Live', cat: 'CD Album Design', filter: 'media', desc: 'Full CD disc design with tracklist and artist branding' }
+  /* ── BRAND IDENTITY & LOGO ── */
+  {
+    id: 'd-logo1',
+    file: 'images/photo_2026-06-29_17-09-17.jpg',
+    name: 'Luxbrands Creatives — Primary Logo',
+    cat: 'Brand Identity · Logo Design',
+    filter: 'identity',
+    desc: 'Official primary logo mark for Luxbrands Creatives — bold, timeless, minimal.'
+  },
+  {
+    id: 'd-logo2',
+    file: 'images/photo_2026-06-29_17-09-17 copy.jpg',
+    name: 'Luxbrands Creatives — Logo Variant',
+    cat: 'Brand Identity · Logo Design',
+    filter: 'identity',
+    desc: 'Secondary logo variant for digital and print applications.'
+  },
+  {
+    id: 'd-logo3',
+    file: 'images/photo_2026-06-29_17-09-13.jpg',
+    name: 'Luxbrands Creatives — Identity System',
+    cat: 'Brand Identity · Logo Design',
+    filter: 'identity',
+    desc: 'Full brand identity system — typography, colour palette and mark.'
+  },
+
+  /* ── MERCHANDISE MOCKUPS ── */
+  {
+    id: 'd-merch1',
+    file: 'images/01 Free PSD Hoodie Mockup copy.jpg',
+    name: 'Premium Hoodie Mockup — Dark Edition',
+    cat: 'Merchandise · Brand Mockup',
+    filter: 'mockup',
+    desc: 'Photo-realistic hoodie mockup showcasing custom brand embroidery.'
+  },
+  {
+    id: 'd-merch2',
+    file: 'images/01 Free PSD Hoodie Mockup copycfcv.jpg',
+    name: 'Premium Hoodie Mockup — Colour Way 2',
+    cat: 'Merchandise · Brand Mockup',
+    filter: 'mockup',
+    desc: 'Alternative colourway hoodie presentation for client merchandise line.'
+  },
+  {
+    id: 'd-merch3',
+    file: 'images/01 Free PSD Hoodie Mockup copynj.jpg',
+    name: 'Premium Hoodie Mockup — Clean Cut',
+    cat: 'Merchandise · Brand Mockup',
+    filter: 'mockup',
+    desc: 'Clean, studio-style hoodie mockup for e-commerce and brand presentation.'
+  },
+  {
+    id: 'd-merch4',
+    file: 'images/01 Free PSD Hoodie Mockup copynj (2).jpg',
+    name: 'Premium Hoodie Mockup — Lifestyle',
+    cat: 'Merchandise · Brand Mockup',
+    filter: 'mockup',
+    desc: 'Lifestyle-oriented hoodie mockup designed for social media campaigns.'
+  },
+
+  /* ── BROCHURE & PRINT DESIGN ── */
+  {
+    id: 'd-broch1',
+    file: 'images/A4_Brochure_Mockup_1 copy1.jpg',
+    name: 'Corporate Brochure — Tri-Fold Vol.1',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Tri-fold A4 corporate brochure with structured layout and brand colours.'
+  },
+  {
+    id: 'd-broch2',
+    file: 'images/A4_Brochure_Mockup_2 copy.jpg',
+    name: 'Corporate Brochure — Bi-Fold',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Elegant bi-fold brochure layout designed for professional service firms.'
+  },
+  {
+    id: 'd-broch3',
+    file: 'images/A4_Brochure_Mockup_2 copy1.jpg',
+    name: 'Corporate Brochure — Bi-Fold Vol.2',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Second bi-fold variant featuring a bold imagery-driven cover layout.'
+  },
+  {
+    id: 'd-broch4',
+    file: 'images/A4_Brochure_Mockup_5 copy1.jpg',
+    name: 'Company Profile — Multi-Page',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Multi-page company profile mockup — ideal for corporate presentations.'
+  },
+  {
+    id: 'd-broch5',
+    file: 'images/A4_Brochure_Mockup_7 copy.jpg',
+    name: 'Services Brochure — Spread Layout',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Double-spread services brochure with clean grid and editorial feel.'
+  },
+  {
+    id: 'd-broch6',
+    file: 'images/A4_Brochure_Mockup_7 copy1.jpg',
+    name: 'Services Brochure — Cover Focus',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Cover-focused brochure layout emphasising brand personality and tone.'
+  },
+  {
+    id: 'd-broch7',
+    file: 'images/A4_Brochure_Mockup_8 copy1.jpg',
+    name: 'Portfolio / Lookbook — Print',
+    cat: 'Print Design · Brochure',
+    filter: 'print',
+    desc: 'Lookbook-style print mockup for product catalogues and brand portfolios.'
+  }
 ];
 
 const FILTERS = [
-  { id: 'all', label: 'All Work' },
-  { id: 'political', label: 'Political' },
-  { id: 'event', label: 'Events' },
-  { id: 'wedding', label: 'Wedding' },
-  { id: 'media', label: 'Media & CD' }
+  { id: 'all',      label: 'All Work' },
+  { id: 'identity', label: 'Brand Identity' },
+  { id: 'mockup',   label: 'Merchandise' },
+  { id: 'print',    label: 'Print & Brochures' }
 ];
+
 
 /* ── RENDER PROJECTS ── */
 function renderProjects() {
